@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UpdateContact"
+    android:padding="30dp">
+
+<EditText
+    android:id="@+id/editContactName2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="100dp"
+    android:ems="10"
+    android:hint="@string/enter_the_name"
+    android:inputType="textPersonName"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+<EditText
+    android:id="@+id/editContactNumber2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="28dp"
+    android:ems="10"
+    android:hint="@string/enter_the_number"
+    android:inputType="number"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="@+id/editContactName2"
+    app:layout_constraintTop_toBottomOf="@+id/editContactName2" />
+
+<Button
+    android:id="@+id/updateContact"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="68dp"
+    android:text="@string/update"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="@+id/editContactNumber2"
+    app:layout_constraintTop_toBottomOf="@+id/editContactNumber2" />
+
+    <Button
+        android:id="@+id/deleteContact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:textColor="#FF0000"
+        android:text="@string/delete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editContactNumber2"
+        app:layout_constraintTop_toBottomOf="@+id/updateContact" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

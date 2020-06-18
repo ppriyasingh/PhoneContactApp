@@ -9,10 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AddNewContact"
-            android:label="Add Contacts"
+        <activity android:name=".UpdateContact"
             android:parentActivityName=".MainActivity"></activity>
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".AddNewContact"
+            android:label="Add Contacts"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".MainActivity"
             android:label="Phone Contact">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

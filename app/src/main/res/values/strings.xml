@@ -3,4 +3,6 @@
     <string name="enter_the_name">Enter the Name</string>
     <string name="enter_the_number">Enter the number</string>
     <string name="addNewContact">ADD</string>
+    <string name="update">Update</string>
+    <string name="delete">DELETE</string>
 </resources>
