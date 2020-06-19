@@ -15,17 +15,17 @@ import java.util.ArrayList;
 
 public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder> {
 
-    private ArrayList contactData, phoneData;
-    private int id;
+    private ArrayList id, contactData, phoneData;
 //    private ItemClickListener mClickListener;
     private Context context;
     Activity activity;
 
     // data is passed into the constructor
-    MyRecyclerViewAdapter(Activity activity, Context context, ArrayList cData, ArrayList phData) {
+    MyRecyclerViewAdapter(Activity activity, Context context, ArrayList id, ArrayList cData, ArrayList phData) {
 
         this.activity = activity;
         this.context = context;
+        this.id = id;
         this.contactData = cData;
         this.phoneData = phData;
     }
@@ -52,9 +52,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, UpdateContact.class);
-                id = contactData.indexOf(contactData.get(position));
-                id += 1;
-                intent.putExtra("id", String.valueOf(id));
+                intent.putExtra("id", String.valueOf(id.get(position)));
                 intent.putExtra("contactData", String.valueOf(contactData.get(position)));
                 intent.putExtra("phoneData", String.valueOf(phoneData.get(position)));
 

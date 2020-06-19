@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 //    FloatingActionButton add_button;
 
     DbManager myDB;
-    ArrayList<String> contact_name, phone_number;
+    ArrayList<String> id, contact_name, phone_number;
     MyRecyclerViewAdapter myRecyclerViewAdapter;
 
     @Override
@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         myDB = new DbManager(this);
+        id = new ArrayList<>();
         contact_name = new ArrayList<>();
         phone_number = new ArrayList<>();
 
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         // set up the RecyclerView
         recyclerView = findViewById(R.id.rvAnimals);
 
-        myRecyclerViewAdapter = new MyRecyclerViewAdapter(MainActivity.this, this, contact_name, phone_number);
+        myRecyclerViewAdapter = new MyRecyclerViewAdapter(MainActivity.this, this, id, contact_name, phone_number);
         recyclerView.setAdapter(myRecyclerViewAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
@@ -66,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "No data found...", Toast.LENGTH_SHORT).show();
         } else {
             while (cursor.moveToNext()) {
+                id.add(cursor.getString(0));
                 contact_name.add(cursor.getString(1));
                 phone_number.add(cursor.getString(2));
             }
